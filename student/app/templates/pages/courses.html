@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="mb-4">Courses</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Content</th>
+          <th scope="col">Fee</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for course in courses %}
+          <tr>
+            <td>{{ course.title }}</td>
+            <td>{{ course.description }}.</td>
+            <td>$ {{ course.fee }}</td>
+            <td>
+              <a href="/course/{{ course.id }}" class="btn btn-primary btn-sm">View</a>
+            </td>
+          </tr>
+        {% endfor %}
+        <!-- Add more courses as needed -->
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
